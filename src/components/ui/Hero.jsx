@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-import { whatsappLink } from '../config';
+import { whatsappLink } from '../../config';
 import Media from './Media';
 import './Hero.css';
 
 const INTERVAL = 6000; // 6 seconds per slide
 
 const slides = [
-  { title: 'Lune & Luster', image: './images/hero-1.png' },
-  { title: 'Engraved with love', image: './images/hero-2.png' },
-  { title: 'Gifts with meaning', image: './images/hero-3.png' },
-  { title: 'For the ones you love', image: './images/hero-4.png' },
+  { title: 'Lune & Luster', image: '/images/hero-1.png' },
+  { title: 'Engraved with love', image: '/images/hero-2.png' },
+  { title: 'Gifts with meaning', image: '/images/hero-3.png' },
+  { title: 'For the ones you love', image: '/images/hero-4.png' },
 ];
 
 export default function Hero() {
