@@ -1,0 +1,7 @@
+.gift { display: grid; grid-template-columns: 1fr 1fr; background: var(--ivory); }
+.gift-text { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(2rem, 6vw, 5.5rem); }
+.gift-text p { color: var(--muted); margin: 1rem 0 1.8rem; max-width: 380px; }
+.gift-img { min-height: 420px; }
+.gift-img img { transition: transform 1.2s ease; }
+.gift:hover .gift-img img { transform: scale(1.04); }
+@media (max-width: 800px) { .gift { grid-template-columns: 1fr; } .gift-img { order: -1; min-height: 300px; } }

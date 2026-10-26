@@ -1,0 +1,16 @@
+
+.banner {
+  position: relative;
+  height: 100vh;
+  height: 100svh;      /* make this smaller (e.g. 70svh) for a shorter window */
+  min-height: 420px;
+  clip-path: inset(0); /* crops the fixed picture to this section (also works on iPhones) */
+}
+
+.banner-img {
+  position: fixed;     /* stays put while the page scrolls */
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import Media from './Media';
 import Reveal from './Reveal';
-import categories from '../data/categories';
+import categories from '../../data/categories';
 import './About.css';
 
 const ABOUT = {
