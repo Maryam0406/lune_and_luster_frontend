@@ -1,7 +1,7 @@
-import categories from '../../data/categories';
+import categories from '../../../data/categories';
 import Media from './Media';
 import Reveal from './Reveal';
-import { whatsappLink } from '../../config';
+import { whatsappLink } from '../../../config';
 import './Categories.css';
 
 export default function Categories() {

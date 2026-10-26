@@ -1,4 +1,4 @@
-import pillars from '../../data/pillars';
+import pillars from '../../../data/pillars';
 import Media from './Media';
 import Reveal from './Reveal';
 import './Pillars.css';

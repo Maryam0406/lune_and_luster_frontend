@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { whatsappLink } from '../../config';
+import { whatsappLink } from '../../../config';
 import Media from './Media';
 import './Hero.css';
 

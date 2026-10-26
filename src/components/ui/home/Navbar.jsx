@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { whatsappLink } from '../../config';
+import { whatsappLink } from '../../../config';
 import './Navbar.css';
 
 const links = [

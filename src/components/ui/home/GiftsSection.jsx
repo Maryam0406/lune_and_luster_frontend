@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import Media from './Media';
 import Reveal from './Reveal';
-import { whatsappLink } from '../../config';
+import { whatsappLink } from '../../../config';
 import './GiftsSection.css';
 
 export default function GiftsSection() {
