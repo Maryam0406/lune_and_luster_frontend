@@ -5,3 +5,6 @@
 .gift-img img { transition: transform 1.2s ease; }
 .gift:hover .gift-img img { transform: scale(1.04); }
 @media (max-width: 800px) { .gift { grid-template-columns: 1fr; } .gift-img { order: -1; min-height: 300px; } }
+
+
+.gift-text .section-title { font-family: var(--sans); font-weight: 400; letter-spacing: 0.08em; font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.3; }

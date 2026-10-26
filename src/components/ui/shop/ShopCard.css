@@ -1,0 +1,23 @@
+/* the box (same border as .cat-card on Home) */
+.shop-card {
+  height: 100%;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(166, 124, 82, 0.38);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.shop-card:hover { border-color: var(--gold); box-shadow: 0 12px 28px rgba(60, 40, 20, 0.08); }
+
+/* the picture (same 3 / 5 shape as .cat-img) */
+.shop-img { position: relative; }
+.shop-media { aspect-ratio: 3 / 5; }
+.shop-media img { transition: transform 0.8s ease; }
+.shop-card:hover .shop-media img { transform: scale(1.08); }
+
+.shop-tag { position: absolute; top: 0.5rem; left: 0.5rem; z-index: 2; padding: 0.25rem 0.55rem; background: var(--white); font-size: 0.56rem; letter-spacing: 0.2em; color: var(--gold-dark); }
+
+/* the words under the picture (same font and size as the category names) */
+.shop-info { display: flex; flex-direction: column; justify-content: center; min-height: calc(2.7em + 2.6rem); padding: 0.6rem 0.5rem; }
+.shop-info h3 { font-family: var(--sans); font-weight: 400; font-size: 0.74rem; line-height: 1.35; letter-spacing: 0.03em; transition: color 0.3s; }
+.shop-info p { margin-top: 0.25rem; font-size: 0.68rem; color: var(--muted); }
+.shop-card:hover .shop-info h3 { color: var(--gold-dark); }
