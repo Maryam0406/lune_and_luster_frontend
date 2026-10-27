@@ -1,8 +1,8 @@
-import Media from '../Media';
-import Reveal from '../Reveal';
+import Media from '../home/Media';
+import Reveal from '../home/Reveal';
 import './ContactHero.css';
 
-const HERO_IMAGE = '/images/contact-hero.jpg';
+const HERO_IMAGE = '/images/contact-hero.png';
 
 export default function ContactHero() {
   return (
