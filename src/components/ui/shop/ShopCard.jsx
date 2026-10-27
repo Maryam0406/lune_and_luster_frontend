@@ -1,6 +1,6 @@
-import Media from '@/components/ui/Media';
-import Reveal from '@/components/ui/Reveal';
-import { formatPrice } from '@/utils/format';
+import Media from "../home/Media";
+import Reveal from "../home/Reveal";
+import { formatPrice } from "../../../utils/format";
 import './ShopCard.css';
 
 // One product tile. Same box, same picture shape and same font as the

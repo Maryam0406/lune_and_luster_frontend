@@ -176,3 +176,44 @@
 .nav-links a.active::after { width: 100%; }
 .drawer nav a.active { color: var(--gold-dark); }
 .drawer { color: var(--ink); }
+
+/* ---------- Shop Now dropdown (desktop) ---------- */
+.nav-links > li { position: relative; }
+.nav-links .caret { margin-left: 0.2rem; vertical-align: -1px; transition: transform 0.3s; }
+.has-menu.show .caret { transform: rotate(180deg); }
+
+.dropdown {
+  position: absolute; top: 100%; left: 50%;
+  min-width: 250px; padding-top: 0.6rem;      /* invisible bridge so the menu doesn't close while the mouse moves down */
+  transform: translate(-50%, 8px);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 80;
+}
+.has-menu.show .dropdown { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+
+.dropdown ul {
+  display: block; padding: 0.5rem 0;
+  background: var(--white); color: var(--ink);       /* always a light panel, even over the hero */
+  border: 1px solid var(--line); border-top: 2px solid var(--gold);
+  box-shadow: 0 18px 40px rgba(60, 40, 20, 0.12);
+}
+/* same font as the category names on Home, a little smaller */
+.dropdown a {
+  display: block; padding: 0.62rem 1.4rem;
+  font-family: var(--sans); font-size: 0.68rem; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.3;
+  transition: background 0.2s, color 0.2s, padding-left 0.2s;
+}
+.dropdown a::after { display: none; }                /* no underline animation inside the dropdown */
+.dropdown a:hover { background: var(--sand); color: var(--gold-dark); padding-left: 1.7rem; }
+.dropdown a.current { color: var(--gold-dark); }
+
+/* the white-text navbar rule must not leak into the dropdown */
+.header.over-hero .dropdown a { color: var(--ink); }
+.header.over-hero .dropdown a:hover { color: var(--gold-dark); }
+
+/* ---------- categories under "Shop Now" in the phone menu ---------- */
+.drawer { overflow-y: auto; }
+.drawer-sub { display: flex; flex-direction: column; gap: 0.75rem; margin: 0.9rem 0 0.3rem 0.2rem; padding-left: 1rem; border-left: 1px solid var(--line); }
+.drawer-sub a { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.12em; color: var(--muted); }
