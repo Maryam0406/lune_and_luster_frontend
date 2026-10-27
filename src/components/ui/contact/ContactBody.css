@@ -1,0 +1,2 @@
+/* space between the framed form and the three contact details */
+.cbody-gap { height: clamp(3.5rem, 8vw, 6rem); }
