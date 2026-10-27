@@ -5,6 +5,7 @@ import products from '../data/products';
 import categories from '../data/categories';
 import ShopHeader from '../components/ui/shop/ShopHeader';
 import ProductGrid from '../components/ui/shop/ProductGrid';
+import Navbar from '../components/layouts/Navbar';
 
 
 export default function Shop() {
