@@ -1,0 +1,35 @@
+/* two sides: pic 60%, info 40% */
+.pview {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.pview-sticky {
+    position: sticky;
+    top: 76px;
+    padding: 3.5rem clamp(1.5rem, 5vw, 5.5rem) 0;
+}
+
+/* picture on the right instead */
+.pview--flip {
+  grid-template-columns: 40% 60%;
+}
+
+.pview--flip .pview-gallery {
+  order: 2;
+}
+
+@media (max-width: 900px) {
+  .pview, .pview--flip { 
+    grid-template-columns: 1fr; 
+
+}
+
+  .pview--flip .pview-gallery { 
+    order: 0; 
+}
+
+  .pview-sticky { 
+    position: static; padding: 2rem 1.2rem 3rem; 
+
+}
