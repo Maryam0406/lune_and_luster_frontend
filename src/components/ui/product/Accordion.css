@@ -1,0 +1,17 @@
+.acc { border-top: 1px solid var(--line); }
+.acc:last-child { border-bottom: 1px solid var(--line); }
+
+.acc-head { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.15rem 0; font-size: 0.7rem; letter-spacing: 0.2em; color: var(--muted); text-align: left; transition: color 0.3s; }
+.acc-head:hover, .acc.open .acc-head { color: var(--ink); }
+
+/* smooth open and close */
+.acc-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s ease; }
+.acc.open .acc-body { grid-template-rows: 1fr; }
+.acc-inner { overflow: hidden; }
+
+/* the text inside stays easy to read (not uppercase) */
+.acc-inner { font-size: 0.86rem; line-height: 1.85; color: var(--muted); text-transform: none; letter-spacing: 0.01em; }
+.acc-inner > *:last-child { margin-bottom: 1.3rem; }
+.acc-inner p { margin-bottom: 0.9rem; }
+.acc-inner .acc-strong { display: block; margin-bottom: 0.9rem; font-weight: 500; color: var(--ink); }
+.acc-inner .acc-link { display: inline-block; margin-bottom: 1rem; font-weight: 500; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.78rem; }

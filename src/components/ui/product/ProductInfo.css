@@ -1,0 +1,21 @@
+.pinfo-title { font-family: var(--serif); font-weight: 500; font-size: clamp(1.5rem, 2.2vw, 1.9rem); letter-spacing: 0.16em; line-height: 1.2; }
+
+.pinfo-price { display: flex; align-items: center; justify-content: space-between; margin-top: 0.7rem; font-family: var(--serif); font-size: 1.15rem; letter-spacing: 0.06em; color: var(--gold-dark); }
+.pinfo-price button { color: var(--muted); transition: color 0.3s; }
+.pinfo-price button:hover, .pinfo-price button.on { color: var(--gold-dark); }
+
+.pinfo-rule { margin: 1.4rem 0; border: 0; border-top: 1px solid var(--line); }
+
+.pinfo-group { margin-bottom: 1.5rem; }
+.pinfo-label { display: block; margin-bottom: 0.8rem; font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.06em; color: var(--ink); }
+.pinfo-label em { margin-left: 0.5rem; font-style: normal; font-family: var(--sans); font-size: 0.64rem; letter-spacing: 0.18em; color: var(--muted); }
+
+/* the colour circles */
+.pinfo-swatches { display: flex; gap: 0.9rem; }
+.pinfo-swatches button { width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid var(--line); outline: 1px solid transparent; outline-offset: 3px; transition: outline-color 0.25s, transform 0.25s; }
+.pinfo-swatches button:hover { transform: scale(1.08); }
+.pinfo-swatches button.on { outline-color: var(--gold-dark); }
+
+/* the big button */
+.pinfo-cart { width: 100%; height: 3.3rem; margin: 0.4rem 0 2rem; font-size: 0.74rem; letter-spacing: 0.26em; text-transform: uppercase; background: var(--gold); color: #fff; border: 1px solid var(--gold); transition: background 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.pinfo-cart:hover { background: var(--gold-dark); border-color: var(--gold-dark); box-shadow: 0 10px 24px rgba(166, 124, 82, 0.25); }

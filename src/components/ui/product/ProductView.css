@@ -5,11 +5,16 @@
 }
 
 .pview-sticky {
-    position: sticky;
-    top: 76px;
-    padding: 3.5rem clamp(1.5rem, 5vw, 5.5rem) 0;
+  height: calc(100vh - 76px);
+  height: calc(100svh - 76px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem clamp(1.5rem, 5vw, 5.5rem);
+  scrollbar-width: none;
 }
-
+.pview-sticky::-webkit-scrollbar { display: none; }
+.pview-sticky > * { margin: auto 0; }   /* centres the content up and down */
 /* picture on the right instead */
 .pview--flip {
   grid-template-columns: 40% 60%;
