@@ -1,5 +1,7 @@
 .chero { position: relative; }
-.chero-img { height: max(62svh, 440px); }         
+.chero-img { height: max(62svh, 440px); }  
+.chero-img img { animation: chero-zoom 8s ease-out both; }
+@keyframes chero-zoom { from { transform: scale(1.1); } to { transform: scale(1); } }       
 
 .chero .container { position: relative; }
 .chero-card {
