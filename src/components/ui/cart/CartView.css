@@ -1,0 +1,57 @@
+.cview {
+    padding: 3.5rem 0 5rem;
+}
+
+.cview-title {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    letter-spacing: 0.14em;
+    text-align: center;
+}
+
+.cview-count {
+    margin: 0.6rem 0 3rem;
+    text-align: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.22rem;
+    color: var(--muted);
+}
+
+.cview-grid {
+    display: grid;
+    grid-template-columns: 1fr 22rem;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+.cview-list {
+    border-top: 1px solid var(--line);
+}
+
+.cview-empty {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+    padding: 4rem 1.2rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+.cview-empty .cview-title {
+    color: var(--ink);
+}
+
+.cview-empty p {
+    margin-bottom: 0.8rem;
+}
+
+@media (max-width : 900px) {
+    .cview-grid { 
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
