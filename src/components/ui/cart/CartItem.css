@@ -1,0 +1,24 @@
+.citem { display: grid; grid-template-columns: 7rem 1fr auto; gap: 1.6rem; padding: 1.6rem 0; border-bottom: 1px solid var(--line); }
+
+.citem-img { display: block; aspect-ratio: 3 / 4; background: var(--sand); overflow: hidden; }
+.citem-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.citem-body { display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem; }
+.citem-name { font-family: var(--serif); font-size: 1.2rem; letter-spacing: 0.08em; line-height: 1.25; color: var(--ink); }
+.citem-name:hover { color: var(--gold-dark); }
+.citem-meta { font-size: 0.72rem; letter-spacing: 0.14em; color: var(--muted); }
+
+.citem-qty { display: inline-flex; align-items: center; margin-top: 0.8rem; border: 1px solid var(--line); background: var(--white); }
+.citem-qty button { width: 2.4rem; height: 2.3rem; display: grid; place-items: center; transition: background 0.25s; }
+.citem-qty button:hover { background: var(--sand); }
+.citem-qty span { min-width: 2.8rem; text-align: center; line-height: 2.3rem; font-size: 0.85rem; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+
+.citem-side { display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; }
+.citem-remove { color: var(--muted); transition: color 0.25s; }
+.citem-remove:hover { color: var(--ink); }
+.citem-total { font-family: var(--serif); font-size: 1.15rem; letter-spacing: 0.05em; color: var(--gold-dark); }
+
+@media (max-width: 560px) {
+  .citem { grid-template-columns: 5.5rem 1fr auto; gap: 1rem; }
+  .citem-name { font-size: 1.05rem; }
+}
