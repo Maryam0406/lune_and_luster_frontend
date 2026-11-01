@@ -1,42 +1,38 @@
 import { useState } from 'react';
-import { Bookmark } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Minus, Plus, ShoppingBag } from 'lucide-react';
 import { formatPrice } from '../../../utils/format';
-import { whatsappLink } from '../../../config';
 import { defaultContent } from '../../../data/productContent';
-import Accordion from './Accordion';
+import { useCart } from '../../../context/CartContext';
 import './ProductInfo.css';
 
-// Everything beside the picture: name, price, colour, button and the text sections
+// Everything beside the picture
 export default function ProductInfo({ product, colors, selected, onSelect }) {
-  const content = { ...defaultContent, ...(product.content || {}) };
+  const { addItem } = useCart();
   const finish = colors.find((c) => c.key === selected).name;   // the chosen colour's name
-  const [saved, setSaved] = useState(false);
+  const [qty, setQty] = useState(1);
+  const [added, setAdded] = useState(false);
 
-  // Cart comes later. For now the button opens WhatsApp with the choices already written.
+  const description = product.description || defaultContent.short;
+
   const addToCart = () => {
-    const lines = [
-      `Hi Lune & Luster! I'd like to order: ${product.name}`,
-      `Colour: ${finish}`,
-    ];
-    window.open(whatsappLink(lines.join('\n')), '_blank', 'noopener');
+    addItem(product.id, selected, qty);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);   // "Added" goes back to "Add to Cart" after 2 seconds
   };
 
   return (
     <div className="pinfo">
+      {product.isNew && <span className="pinfo-tag">New Arrival</span>}
+
       <h1 className="pinfo-title">{product.name}</h1>
+      <div className="pinfo-price">{formatPrice(product.price)}</div>
 
-      <div className="pinfo-price">
-        <span>{formatPrice(product.price)}</span>
-        <button onClick={() => setSaved(!saved)} aria-label="Save for later" className={saved ? 'on' : ''}>
-          <Bookmark size={17} strokeWidth={1.5} fill={saved ? 'currentColor' : 'none'} />
-        </button>
-      </div>
+      <p className="pinfo-desc">{description}</p>
 
-      <hr className="pinfo-rule" />
-
-      {/* the two colours: just a circle each */}
+      {/* colour: just two circles */}
       <div className="pinfo-group">
-        <div className="pinfo-label">Colour <em>{finish}</em></div>
+        <div className="pinfo-label">Colour: <em>{finish}</em></div>
         <div className="pinfo-swatches">
           {colors.map((c) => (
             <button
@@ -51,22 +47,21 @@ export default function ProductInfo({ product, colors, selected, onSelect }) {
         </div>
       </div>
 
-      <button className="pinfo-cart" onClick={addToCart}>Add to Cart</button>
-
-      {/* the text sections */}
-      <div className="pinfo-acc">
-        <Accordion title="Product details" defaultOpen>
-          <span className="acc-link">{content.highlight}</span>
-          <p>{content.description}</p>
-          <span className="acc-strong">Care instructions</span>
-          {content.care.map((line) => <p key={line}>{line}</p>)}
-          <span className="acc-strong">Material</span>
-          <p>{content.material}</p>
-        </Accordion>
-        <Accordion title="Sizing & fit"><p>{content.sizing}</p></Accordion>
-        <Accordion title="Return policy"><p>{content.returns}</p></Accordion>
-        <Accordion title="Shipping"><p>{content.shipping}</p></Accordion>
+      {/* quantity */}
+      <div className="pinfo-group">
+        <div className="pinfo-label">Quantity:</div>
+        <div className="pinfo-qty">
+          <button onClick={() => setQty(Math.max(1, qty - 1))} aria-label="Less"><Minus size={15} /></button>
+          <span>{qty}</span>
+          <button onClick={() => setQty(Math.min(10, qty + 1))} aria-label="More"><Plus size={15} /></button>
+        </div>
       </div>
+
+      <button className="pinfo-cart" onClick={addToCart}>
+        <ShoppingBag size={17} strokeWidth={1.5} /> {added ? 'Added to Cart' : 'Add to Cart'}
+      </button>
+
+      {added && <Link to="/cart" className="pinfo-viewcart">View Cart</Link>}
     </div>
   );
 }
