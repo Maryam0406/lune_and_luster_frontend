@@ -217,3 +217,9 @@
 .drawer { overflow-y: auto; }
 .drawer-sub { display: flex; flex-direction: column; gap: 0.75rem; margin: 0.9rem 0 0.3rem 0.2rem; padding-left: 1rem; border-left: 1px solid var(--line); }
 .drawer-sub a { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.12em; color: var(--muted); }
+
+/* bag icon + Enquire button sit together on the right */
+.nav-actions { display: flex; align-items: center; gap: 1.2rem; }
+
+.cart-link { position: relative; display: grid; place-items: center; color: inherit; }
+.cart-badge { position: absolute; top: -0.55rem; right: -0.7rem; min-width: 1.15rem; height: 1.15rem; padding: 0 0.3rem; display: grid; place-items: center; border-radius: 999px; background: var(--gold-dark); color: #fff; font-size: 0.62rem; letter-spacing: 0; line-height: 1; }

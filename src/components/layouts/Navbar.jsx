@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingBag } from 'lucide-react';
 import categories from '../../data/categories';
 import { whatsappLink } from '../../config';
+import { useCart } from '../../context/CartContext';
 import './Navbar.css';
 
 const links = [
@@ -23,6 +24,7 @@ export default function Navbar() {
   const [shopOpen, setShopOpen] = useState(false);  // desktop dropdown
   const { pathname, search } = useLocation();
   const isHome = pathname === '/';
+  const { count } = useCart();
 
   // which dropdown item is the current one?
   const currentCat = pathname === '/shop' ? Number(new URLSearchParams(search).get('category')) || 0 : -1;
@@ -79,7 +81,16 @@ export default function Navbar() {
             )}
           </ul>
 
-          <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn btn-gold nav-cta">Enquire</a>
+          <div className="nav-actions">
+            <Link to="/cart" className="cart-link" aria-label={`Cart, ${count} items`}>
+              <ShoppingBag size={21} strokeWidth={1.4} />
+              {count > 0 && <span className="cart-badge">{count}</span>}
+            </Link>
+
+            <a href={whatsappLink()} target="_blank" rel="noreferrer" className="btn btn-gold nav-cta">
+              Enquire
+            </a>
+          </div>
         </div>
       </header>
 
