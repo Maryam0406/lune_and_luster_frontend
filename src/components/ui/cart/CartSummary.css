@@ -1,14 +1,87 @@
-.csum { position: sticky; top: 100px; padding: 2rem 1.8rem; background: var(--sand); }
-.csum-title { font-family: var(--serif); font-weight: 500; font-size: 1.3rem; letter-spacing: 0.12em; margin-bottom: 1.4rem; }
+.csum { 
+    position: sticky; 
+    top: 100px; 
+    padding: 2rem 1.8rem; 
+    background: var(--sand); 
+}
 
-.csum-row { display: flex; justify-content: space-between; align-items: baseline; padding: 1.1rem 0; border-top: 1px solid var(--line); font-size: 0.78rem; letter-spacing: 0.16em; }
-.csum-row strong { font-family: var(--serif); font-weight: 500; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--gold-dark); }
-.csum-note { margin-bottom: 1.4rem; font-size: 0.8rem; line-height: 1.7; color: var(--muted); text-transform: none; letter-spacing: 0.01em; }
 
-.csum-order { width: 100%; height: 3.3rem; display: flex; align-items: center; justify-content: center; gap: 0.7rem; font-size: 0.74rem; letter-spacing: 0.24em; text-transform: uppercase; background: var(--gold); color: #fff; border: 1px solid var(--gold); transition: background 0.3s, border-color 0.3s; }
-.csum-order:hover { background: var(--gold-dark); border-color: var(--gold-dark); }
+.csum-title { 
+    font-family: var(--serif); 
+    font-weight: 500; 
+    font-size: 1.3rem; 
+    letter-spacing: 0.12em; 
+    margin-bottom: 1.4rem; 
+}
 
-.csum-link { display: block; width: 100%; margin-top: 1rem; text-align: center; font-size: 0.68rem; letter-spacing: 0.2em; color: var(--muted); text-decoration: underline; text-underline-offset: 4px; transition: color 0.25s; }
-.csum-link:hover { color: var(--ink); }
+.csum-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: baseline; 
+    padding: 1.1rem 0; 
+    border-top: 1px solid var(--line); 
+    font-size: 0.78rem; 
+    letter-spacing: 0.16em; 
+}
 
-@media (max-width: 900px) { .csum { position: static; } }
+.csum-row strong { 
+    font-family: var(--serif); 
+    font-weight: 500; 
+    font-size: 1.3rem; 
+    letter-spacing: 0.05em; 
+    color: var(--gold-dark); 
+}
+
+.csum-note { 
+    margin-bottom: 1.4rem; 
+    font-size: 0.8rem; 
+    line-height: 1.7; 
+    color: var(--muted); 
+    text-transform: none; 
+    letter-spacing: 0.01em; 
+}
+
+.csum-order { 
+    width: 100%; 
+    text-decoration: none; 
+    height: 3.3rem; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 0.7rem; 
+    font-size: 0.74rem; 
+    letter-spacing: 0.24em; 
+    text-transform: uppercase; 
+    background: var(--gold); 
+    color: #fff; 
+    border: 1px solid var(--gold); 
+    transition: background 0.3s, border-color 0.3s; 
+}
+
+.csum-order:hover { 
+    background: var(--gold-dark); 
+    border-color: var(--gold-dark); 
+}
+
+.csum-link { 
+    display: block; 
+    text-transform: uppercase; 
+    width: 100%; 
+    margin-top: 1rem; 
+    text-align: center; 
+    font-size: 0.68rem; 
+    letter-spacing: 0.2em; 
+    color: var(--muted); 
+    text-decoration: underline; 
+    text-underline-offset: 4px; 
+    transition: color 0.25s; 
+}
+
+.csum-link:hover { 
+    color: var(--ink); 
+}
+
+@media (max-width: 900px) { 
+    .csum { 
+        position: static; } 
+}
