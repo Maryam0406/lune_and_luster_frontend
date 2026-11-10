@@ -136,7 +136,32 @@ export default function CheckoutView() {
 
     }
 
+    if (lines.length === 0) {
+        return (
+            <section className="chk chk-center">
+                <ShoppingBag size={40} strokeWidth={1} />
+                <h1 className="chk-title">Your Cart is Empty</h1>
+                <p>Add a piece to your cart first, then come back here to check out</p>
+                <Link to="/shop" className="btn btn-gold">Go to Shop</Link>
+            </section>
+        );
+    }
 
+  return (
+    <section className="chk">
+      <div className="container">
+        <CheckoutSteps step={step} />
 
+        <div className="chk-grid">
+          <div className="chk-main">
+            <ShippingForm form={form} errors={errors} onChange={change} saveInfo={saveInfo} onSave={setSaveInfo} />
+            <PaymentMethods value={payment} onChange={setPayment} />
+            <ReviewOrder onPlace={placeOrder} />
+          </div>
+
+          <OrderSummary lines={lines} count={count} subtotal={subtotal} discount={discount} shipping={SHIPPING_FEE} total={total} promo={promo} onPromo={setPromo} />
+        </div>
+      </div>
+    </section>
+  );
 }
-

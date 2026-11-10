@@ -1,0 +1,27 @@
+.chk { padding: 3rem 0 5rem; }
+
+.chk-grid { display: grid; grid-template-columns: 1fr 24rem; gap: 2.5rem; align-items: start; }
+.chk-main { display: grid; gap: 1.5rem; }
+
+/* a white box with a numbered heading (used by all three sections) */
+.csec { padding: 1.8rem 2rem 2rem; background: var(--white); border: 1px solid var(--line); }
+.csec-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.6rem; }
+.csec-num { flex: none; width: 2rem; height: 2rem; display: grid; place-items: center; border: 1px solid var(--gold-dark); border-radius: 50%; font-family: var(--serif); font-size: 1rem; color: var(--gold-dark); }
+.csec-title { font-family: var(--serif); font-weight: 500; font-size: 1.35rem; letter-spacing: 0.1em; line-height: 1.1; }
+.csec-sub { margin-top: 0.3rem; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--muted); }
+
+/* the "thank you" and "empty" screens */
+.chk-center { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem; padding: 4rem 1.2rem; text-align: center; color: var(--muted); }
+.chk-center p { max-width: 30rem; line-height: 1.8; text-transform: none; letter-spacing: 0.01em; font-size: 0.92rem; }
+.chk-center strong { color: var(--ink); font-weight: 500; }
+.chk-title { font-family: var(--serif); font-weight: 500; font-size: clamp(1.8rem, 3vw, 2.6rem); letter-spacing: 0.14em; color: var(--ink); }
+.chk-done { width: 3.6rem; height: 3.6rem; display: grid; place-items: center; border: 1px solid var(--gold-dark); border-radius: 50%; color: var(--gold-dark); }
+.chk-again { font-size: 0.68rem; letter-spacing: 0.2em; color: var(--muted); text-decoration: underline; text-underline-offset: 4px; }
+.chk-again:hover { color: var(--ink); }
+
+@media (max-width: 980px) {
+  .chk-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .csec { padding: 1.4rem 1.1rem 1.6rem; }
+}

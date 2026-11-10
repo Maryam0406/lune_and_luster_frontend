@@ -1,0 +1,16 @@
+.csteps { display: flex; justify-content: center; align-items: center; margin-bottom: 2.6rem; }
+.cstep { display: flex; align-items: center; gap: 0.7rem; color: var(--muted); }
+.cstep + .cstep::before { content: ''; width: clamp(2.5rem, 9vw, 6rem); height: 1px; margin: 0 1rem; background: var(--line); }
+
+.cstep-dot { width: 1.7rem; height: 1.7rem; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; font-size: 0.72rem; background: var(--white); }
+.cstep-label { font-size: 0.7rem; letter-spacing: 0.2em; }
+
+.cstep.now { color: var(--ink); }
+.cstep.now .cstep-dot { background: var(--ink); border-color: var(--ink); color: #fff; }
+.cstep.done { color: var(--gold-dark); }
+.cstep.done .cstep-dot { border-color: var(--gold-dark); color: var(--gold-dark); }
+
+@media (max-width: 560px) {
+  .cstep-label { display: none; }
+  .cstep.now .cstep-label { display: inline; }
+}
